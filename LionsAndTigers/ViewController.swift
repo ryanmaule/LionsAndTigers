@@ -27,16 +27,18 @@ class ViewController: UIViewController {
         myTiger.age = 3
         myTiger.image = UIImage(named: "BengalTiger.jpg")
         
-        myTiger.chuff()
+        myTiger.age = myTiger.ageInTigerYearsFromAge(myTiger.age)
+        
+        myTiger.chuffANumberOfTimes(myTiger.age)
         
         println("My Tiger's name is: \(myTiger.name), its' age is \(myTiger.age), its' breed is \(myTiger.breed) and its' image is \(myTiger.image)")
         
-        myTigers.append(myTiger)
+        self.myTigers.append(myTiger)
         
-        myImageView.image = myTiger.image
-        nameLabel.text = myTiger.name
-        ageLabel.text = "\(myTiger.age)"
-        breedLabel.text = myTiger.breed
+        self.myImageView.image = myTiger.image
+        self.nameLabel.text = myTiger.name
+        self.ageLabel.text = "\(myTiger.age)"
+        self.breedLabel.text = myTiger.breed
         
         var secondTiger = Tiger()
         secondTiger.name = "Tigress"
@@ -44,11 +46,15 @@ class ViewController: UIViewController {
         secondTiger.age = 2
         secondTiger.image = UIImage(named: "IndochineseTiger.jpg")
         
+        secondTiger.age = secondTiger.ageInTigerYearsFromAge(secondTiger.age)
+        
         var thirdTiger = Tiger()
         thirdTiger.name = "Jacob"
         thirdTiger.breed = "Malayan"
         thirdTiger.age = 4
         thirdTiger.image = UIImage(named: "MalayanTiger.jpg")
+        
+        thirdTiger.age = thirdTiger.ageInTigerYearsFromAge(thirdTiger.age)
         
         var fourthTiger = Tiger()
         fourthTiger.name = "Spar"
@@ -56,7 +62,9 @@ class ViewController: UIViewController {
         fourthTiger.age = 5
         fourthTiger.image = UIImage(named: "SiberianTiger.jpg")
         
-        myTigers += [secondTiger, thirdTiger, fourthTiger]
+        fourthTiger.age = fourthTiger.ageInTigerYearsFromAge(fourthTiger.age)
+        
+        self.myTigers += [secondTiger, thirdTiger, fourthTiger]
         
     }
 
@@ -73,7 +81,7 @@ class ViewController: UIViewController {
             randomIndex = Int(arc4random_uniform(UInt32(myTigers.count)))
         } while currentIndex == randomIndex
         
-        currentIndex = randomIndex
+        self.currentIndex = randomIndex
         
         let tiger = myTigers[randomIndex]
         
@@ -88,6 +96,8 @@ class ViewController: UIViewController {
                 self.nameLabel.text = tiger.name
                 self.ageLabel.text = "\(tiger.age)"
                 self.breedLabel.text = tiger.breed
+                
+                tiger.chuffANumberOfTimes(tiger.age)
             }, completion: {
                 (finished: Bool) -> () in
         })
