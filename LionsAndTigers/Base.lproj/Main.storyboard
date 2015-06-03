@@ -42,7 +42,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="543" width="327" height="21"/>
+                                    <rect key="frame" x="29" y="506" width="327" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyz-Nn-e0R">
@@ -51,7 +51,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="508" width="327" height="21"/>
+                                    <rect key="frame" x="29" y="471" width="327" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAA-w6-GTH">
@@ -60,7 +60,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="472" width="327" height="21"/>
+                                    <rect key="frame" x="29" y="435" width="327" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fact" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTG-Cy-Zv9">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="29" y="544" width="327" height="48"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -72,6 +81,7 @@
                                 <exclude reference="dZW-0S-Pqh"/>
                                 <exclude reference="uyz-Nn-e0R"/>
                                 <exclude reference="sAA-w6-GTH"/>
+                                <exclude reference="uTG-Cy-Zv9"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -81,6 +91,7 @@
                                 <include reference="dZW-0S-Pqh"/>
                                 <include reference="uyz-Nn-e0R"/>
                                 <include reference="sAA-w6-GTH"/>
+                                <include reference="uTG-Cy-Zv9"/>
                             </mask>
                         </variation>
                     </view>
@@ -89,6 +100,7 @@
                         <outlet property="breedLabel" destination="dZW-0S-Pqh" id="aHC-nB-89Q"/>
                         <outlet property="myImageView" destination="mul-qJ-GOX" id="oAa-wY-BBv"/>
                         <outlet property="nameLabel" destination="sAA-w6-GTH" id="aD4-t8-gEh"/>
+                        <outlet property="randomFactLabel" destination="uTG-Cy-Zv9" id="4HD-HH-Ls7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
