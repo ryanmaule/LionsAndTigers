@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     var myTigers:[Tiger] = []
     var lions:[Lion] = []
+    var lionCubs:[LionCub] = []
+    
     var currentIndex = 0
     var currentAnimal = (species: "Tiger", index: 0)
 
@@ -97,9 +99,19 @@ class ViewController: UIViewController {
         lionCub.name = "Simba"
         lionCub.image = UIImage(named: "LionCub1.jpg")
         lionCub.subspecies = "Masai"
+        lionCub.isAlphaMale = true
         
         lionCub.roar()
         lionCub.rubLionCubsBelly()
+        
+        var femaleLionCub = LionCub()
+        femaleLionCub.age = 1
+        femaleLionCub.name = "Nala"
+        femaleLionCub.image = UIImage(named: "LionCub2.jpeg")
+        femaleLionCub.subspecies = "Transvaal"
+        femaleLionCub.isAlphaMale = false
+        
+        self.lionCubs += [lionCub, femaleLionCub]
         
     }
 
@@ -149,6 +161,9 @@ class ViewController: UIViewController {
         case ("Tiger", _):
             let randomIndex = Int(arc4random_uniform(UInt32(lions.count)))
             currentAnimal = ("Lion", randomIndex)
+        case ("Lion", _):
+            let randomIndex = Int(arc4random_uniform(UInt32(lionCubs.count)))
+            currentAnimal = ("LionCub", randomIndex)
         default :
             let randomIndex = Int(arc4random_uniform(UInt32(myTigers.count)))
             currentAnimal = ("Tiger", randomIndex)
@@ -174,6 +189,14 @@ class ViewController: UIViewController {
                 self.ageLabel.text = "\(lion.age)"
                 self.nameLabel.text = lion.name
                 self.randomFactLabel.text = lion.randomFact()
+            }
+            else if self.currentAnimal.species == "LionCub" {
+                let lionCub = self.lionCubs[self.currentAnimal.index]
+                self.myImageView.image = lionCub.image
+                self.breedLabel.text = lionCub.subspecies
+                self.ageLabel.text = "\(lionCub.age)"
+                self.nameLabel.text = lionCub.name
+                self.randomFactLabel.text = lionCub.randomFact()
             }
             self.randomFactLabel.hidden = false
             }, completion: {
